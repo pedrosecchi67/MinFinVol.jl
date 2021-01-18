@@ -68,10 +68,12 @@ Add a point to a mesh:
 * `pt`: a vector with the point at hand
 * `fixed`: a boolean identifying whether the point should be fixed during mesh smoothing
 * `weight`: a weight for mesh smoothing
+* `geps`: if set to a non-zero value, is set as a minimum threshold for merging with other pre-existing points
 
 * return: the new point's index
 ```
-function add_point!(msh::FinVolMesh{N}, pt::Vector{Float64}; fixed::Bool=false, weight::Float64=1.0) where N
+function add_point!(msh::FinVolMesh{N}, pt::Vector{Float64}; 
+    fixed::Bool=false, weight::Float64=1.0, geps::Float64=0.0) where N
 ```
 
 Add a face to a mesh:
