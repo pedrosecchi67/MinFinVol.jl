@@ -147,9 +147,9 @@ function process_geometry!(msh::FinVolMesh{N}) where N
                 end
 
                 if freeside==1
-                    Jac[:, N].=msh.face_centers[fc].-msh.volume_centers[i]
+                    Jac[:, msh.ndim_mesh].=msh.face_centers[fc].-msh.volume_centers[i]
                 else
-                    Jac[:, N].=msh.volume_centers[i].-msh.face_centers[fc]
+                    Jac[:, msh.ndim_mesh].=msh.volume_centers[i].-msh.face_centers[fc]
                 end
 
                 shat, v, d=Jac_volume(Jac)
