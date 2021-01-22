@@ -98,7 +98,7 @@ Add volume to a mesh:
 function add_volume!(msh::FinVolMesh{N}, fcs::Vector{Int64}) where N
 ```
 
-Function to pre-process the geometry of a finite volume mesh and obtain pertinent geometrical properties, after smoothing and geometry alterations are performed:
+Function to **pre-process the geometry** of a finite volume mesh and obtain pertinent geometrical properties, after smoothing and geometry alterations are performed:
 
 * `msh`: the mesh at hand
 ```
