@@ -39,5 +39,16 @@
     flux_integral!(msh, flux_ints, u_faces)
     @assert isapprox(flux_ints, -1.0*ones(Float64, nnds-1); atol=1e-3)
 
+	spm = empty_spmatrix(msh)
+
+	for i = 1:(nnds - 1)
+		if i < (nnds - 1)
+			@assert spm[i, i + 1] == spm[i + 1, i]
+			@assert spm[i, i + 1] == 1.0
+		end
+
+		@assert spm[i, i] == 1.0
+	end
+
     true
 end
